@@ -1,8 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/e-plantShopping/', // 👈 important for GitHub Pages (your repo name)
-})
+  base: '/e-plantShopping/', // This must match your repo name
+  build: {
+    outDir: 'docs' // GitHub Pages will serve from /docs folder on main
+  }
+});
